@@ -2,9 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Lotus VIII</title>
         <link rel="stylesheet" href="styles.css" />
-        <script src="script.js"></script>
     </head>
     <body>
         <section>
@@ -12,22 +10,5 @@
             <div id="mainDiv">Page Not Found</div>
             <br/>
         </section>
-        <section id="overlay">
-            <img src="https://bettysgraphics.neocities.org/images/backgrounds/pattern%20467.gif" /><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <img src="https://bettysgraphics.neocities.org/images/backgrounds/pattern%20467.gif" />
-        </section>
     </body>
 </html>
-    <style>
-        #overlay {
-      position:fixed;
-      background-image: url("https://bettysgraphics.neocities.org/images/backgrounds/pattern%20467.gif");
-      width:10000px;
-      height:10000px;
-      top:0px;
-      right:0px;
-      filter:opacity(50%);
-      pointer-events: none;
-      background-color: rgba(0, 0, 0, 0.5)
-    }
-    </style>
