@@ -7,8 +7,9 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <section id="flower">
-            <a><img src="images/axs5gn.gif" style="height:auto"/></a>
+        <section class="flowerToggle">
+            <!-- Added the ID "flowerImg" to target it with JavaScript -->
+            <a><img id="flowerImg" src="images/axs5gn.gif" style="height:auto"/></a>
         </section>
         <section id="overlay">
             <img src="https://bettysgraphics.neocities.org/images/backgrounds/pattern%20467.gif" /><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -17,7 +18,7 @@
     </body>
 </html>
     <style>
-        #flower {
+        .flowerToggle {
             display: flex;
             justify-content: center;
             align-items:center;
@@ -38,3 +39,16 @@
       background-color: rgba(0, 0, 0, 0.5)
     }
     </style>
+<script>
+    const flowerImg = document.getElementById('flowerImg');
+
+    const localHoverGif = 'images/axs5gn.gif';
+
+    flowerImg.addEventListener('mouseenter', () => {
+      flowerImg.src = `${localHoverGif}?t=${Date.now()}`;
+    });
+
+    flowerImg.addEventListener('mouseleave', () => {
+      flowerImg.src = `${localHoverGif}?t=${Date.now()}`;
+    });
+</script>
