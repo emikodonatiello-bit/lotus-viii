@@ -4,25 +4,23 @@
     <meta charset="UTF-8" />
     <title>Lotus VIII</title>
     <style>
-        /* Base page cleanup and natural layout centering */
         body {
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a; /* Clean background context */
+            background-color: #1a1a1a;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden; /* Prevents unwanted layout scrollbars */
+            overflow: hidden;
         }
 
-        /* Cleaned container centered naturally without using breakable relative offsets */
         .flowerToggle {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            z-index: 10; /* Keeps interactive image layered cleanly above background effects */
+            z-index: 10;
         }
 
         #flowerImg {
@@ -32,7 +30,6 @@
             cursor: pointer;
         }
 
-        /* Fixed ambient background overlay constrained neatly to standard viewport boundaries */
         #overlay {
             position: fixed;
             top: 0;
@@ -41,22 +38,17 @@
             height: 100vh;
             background-color: rgba(0, 0, 0, 0.5);
             opacity: 0.5;
-            pointer-events: none; /* Let mouse clicks pass straight through to the flower image */
+            pointer-events: none;
             z-index: 1;
         }
     </style>
 </head>
 <body>
-
-    <!-- Main Interactive Flower Element -->
     <section class="flowerToggle">
         <a>
-            <!-- The default src is now your specific starting frame file -->
             <img id="flowerImg" src="images/start.gif" alt="Flower"/>
         </a>
     </section>
-
-    <!-- Visual Ambient Background Overlay -->
     <div id="overlay"></div>
 
     <script>
