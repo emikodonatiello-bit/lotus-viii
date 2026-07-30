@@ -8,12 +8,12 @@
     </head>
     <body>
         <section class="flowerToggle">
-            <!-- Added the ID "flowerImg" to target it with JavaScript -->
-            <a><img id="flowerImg" src="images/axs5gn.gif" style="height:auto"/></a>
+            <!-- 1. The default src is now your frozen static placeholder image file -->
+            <a><img id="flowerImg" src="images/axs5gn-static.png" style="height:auto" alt="Flower"/></a>
         </section>
         <section id="overlay">
-            <img src="https://bettysgraphics.neocities.org/images/backgrounds/pattern%20467.gif" /><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <img src="https://bettysgraphics.neocities.org/images/backgrounds/pattern%20467.gif" />
+            <img src="https://neocities.org" /><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <img src="https://neocities.org" />
         </section>
     </body>
 </html>
@@ -29,7 +29,7 @@
         }
         #overlay {
       position:fixed;
-      background-image: url("https://bettysgraphics.neocities.org/images/backgrounds/pattern%20467.gif");
+      background-image: url("https://neocities.org");
       width:10000px;
       height:10000px;
       top:0px;
@@ -41,14 +41,18 @@
     </style>
 <script>
     const flowerImg = document.getElementById('flowerImg');
-
-    const localHoverGif = 'images/axs5gn.gif';
+    
+    // 2. Define your static "frozen" image path and your animated image path
+    const staticImg = 'images/axs5gn-static.png'; 
+    const animatedGif = 'images/axs5gn.gif';
 
     flowerImg.addEventListener('mouseenter', () => {
-      flowerImg.src = `${localHoverGif}?t=${Date.now()}`;
+      // 3. Swap to the animation file and force it to play from frame one
+      flowerImg.src = `${animatedGif}?t=${Date.now()}`;
     });
 
     flowerImg.addEventListener('mouseleave', () => {
-      flowerImg.src = `${localHoverGif}?t=${Date.now()}`;
+      // 4. Revert instantly back to the frozen static image path when the mouse leaves
+      flowerImg.src = staticImg;
     });
 </script>
