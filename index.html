@@ -1,58 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Lotus VIII</title>
-        <link rel="stylesheet" href="styles.css" />
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <section class="flowerToggle">
-            <!-- 1. The default src is now your frozen static placeholder image file -->
-            <a><img id="flowerImg" src="images/axs5gn-static.png" style="height:auto" alt="Flower"/></a>
-        </section>
-        <section id="overlay">
-            <img src="https://neocities.org" /><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <img src="https://neocities.org" />
-        </section>
-    </body>
-</html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Lotus VIII</title>
     <style>
+        /* Base page cleanup and natural layout centering */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* Clean background context */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Prevents unwanted layout scrollbars */
+        }
+
+        /* Cleaned container centered naturally without using breakable relative offsets */
         .flowerToggle {
             display: flex;
             justify-content: center;
-            align-items:center;
-            width:100%;
-            margin:auto;
-            position:relative;
-            top:350px;
+            align-items: center;
+            width: 100%;
+            z-index: 10; /* Keeps interactive image layered cleanly above background effects */
         }
+
+        #flowerImg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+        }
+
+        /* Fixed ambient background overlay constrained neatly to standard viewport boundaries */
         #overlay {
-      position:fixed;
-      background-image: url("https://neocities.org");
-      width:10000px;
-      height:10000px;
-      top:0px;
-      right:0px;
-      filter:opacity(50%);
-      pointer-events: none;
-      background-color: rgba(0, 0, 0, 0.5)
-    }
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0.5;
+            pointer-events: none; /* Let mouse clicks pass straight through to the flower image */
+            z-index: 1;
+        }
     </style>
-<script>
-    const flowerImg = document.getElementById('flowerImg');
-    
-    // 2. Define your static "frozen" image path and your animated image path
-    const staticImg = 'images/axs5gn-static.png'; 
-    const animatedGif = 'images/axs5gn.gif';
+</head>
+<body>
 
-    flowerImg.addEventListener('mouseenter', () => {
-      // 3. Swap to the animation file and force it to play from frame one
-      flowerImg.src = `${animatedGif}?t=${Date.now()}`;
-    });
+    <!-- Main Interactive Flower Element -->
+    <section class="flowerToggle">
+        <a>
+            <!-- The default src is now your specific starting frame file -->
+            <img id="flowerImg" src="images/start.gif" alt="Flower"/>
+        </a>
+    </section>
 
-    flowerImg.addEventListener('mouseleave', () => {
-      // 4. Revert instantly back to the frozen static image path when the mouse leaves
-      flowerImg.src = staticImg;
-    });
-</script>
+    <!-- Visual Ambient Background Overlay -->
+    <div id="overlay"></div>
+
+    <script>
+        // 1. Target the HTML image container
+        const flowerImg = document.getElementById('flowerImg');
+        
+        // 2. Map out your explicit asset states
+        const staticStartImg = 'images/start.gif'; // First frame placeholder
+        const animatedGif = 'images/enter.gif';    // Your 1-loop animation asset
+        const finalEndImg = 'images/end.gif';      // The final resting frame asset
+
+        // 3. Set your animation timing configuration
+        // CHANGE THIS NUMBER to match the exact duration of your enter.gif file in milliseconds!
+        const animationDuration = 2000; 
+        
+        let animationTimer = null;
+
+        // 4. Hover Event Action Logic
+        flowerImg.addEventListener('mouseenter', () => {
+            // Stop active timers if the user quickly hovers in and out to prevent glitchy image swapping
+            clearTimeout(animationTimer);
+            
+            // Force the animation file to load and play cleanly from frame one using a unique timestamp
+            flowerImg.src = `${animatedGif}?t=${Date.now()}`;
+            
+            // Cleanly transition to the solid permanent end frame asset right as the animation finishes its loop
+            animationTimer = setTimeout(() => {
+                flowerImg.src = finalEndImg;
+            }, animationDuration);
+        });
+
+        /* 
+           Note: The 'mouseleave' listener remains excluded so that the graphic stays 
+           permanently frozen on the finalEndImg asset even if the user moves their mouse away.
+        */
+    </script>
+</body>
+</html>
