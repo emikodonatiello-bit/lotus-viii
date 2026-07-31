@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Dollmaker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Genos:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Barriecito', system-ui, sans-serif;
+            background-color: transparent; 
+            margin: 0; 
+            padding: 10px; 
+            display: flex; 
+            justify-content: center; 
+            }
+
+        .container {
+            display: flex;
+            gap: 16px;
+            background: #c8ea72;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            width: 100%;
+            max-width: 850px;
+            border: 1px dashed #c27ba0;
+         }
+        .canvas-area {
+            position: relative;
+            width: 50%;
+            aspect-ratio: 3 / 4;
+            background-color: #f9fafb;
+            border: 3px dashed #c27ba0;
+            border-radius: 8px;
+            overflow: hidden;
+            touch-action: none;
+        }
+        #body-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none;
+            z-index: 1;
+        }
+        .placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #9ca3af;
+            font-size: 13px;
+            width: 80%;
+        }
+        .closet-area {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .tab-bar {
+            display: flex;
+            gap: 4px;
+            border-bottom: 2px solid #e5e7eb;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            scrollbar-width: none;
+        }
+        .tab-bar::-webkit-scrollbar {
+            display: none;
+        }
+        .tab {
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 6px 6px 0 0;
+            color: #c27ba0;
+            border: 1px dashed #c27ba0;
+            background:#c8ea72;
+        }
+        .tab.active { 
+            background: #9db560;
+            color: white; }
+        .grid-container {
+            flex: 1;
+            max-height: 380px;
+            overflow-y: auto;
+            display: none;
+        }
+        .grid-container.active {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            content-visibility: auto;
+            background-color:#9db560
+        }
+        .clothing-item {
+            width: 65px;
+            height: 65px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            cursor: pointer;
+            padding: 4px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .clothing-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .draggable-clothing {
+            position: absolute;
+            cursor: move;
+            z-index: 5;
+            touch-action: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .draggable-clothing img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            pointer-events: none;
+        }
+        .btn-reset {
+            background: #c27ba0;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="canvas-area" id="canvas">
+            <img id="body-image" src="avatar.png" style="display: block;" alt="User body avatar">
+        </div>
+
+        <div class="closet-area">
+            <div class="tab-bar">
+                <div class="tab active" onclick="switchTab('tops')">Tops</div>
+                <div class="tab" onclick="switchTab('bottoms')">Bottoms</div>
+                <div class="tab" onclick="switchTab('shoes')">Shoes</div>
+                <div class="tab" onclick="switchTab('outerwear')">Outerwear</div>
+                <div class="tab" onclick="switchTab('accessories')">Accessories</div>
+            </div>
+            <div class="grid-container active" id="panel-tops"></div>
+            <div class="grid-container" id="panel-bottoms"></div>
+            <div class="grid-container" id="panel-shoes"></div>
+            <div class="grid-container" id="panel-outerwear"></div>
+            <div class="grid-container" id="panel-accessories"></div>
+            <button style="font-family: 'Barriecito', system-ui, sans-serif;" class="btn-reset" onclick="resetOutfit()">Reset Canvas</button>
+        </div>
+    </div>
+    <script>
+        async function loadMassiveCloset() {
+            try {
+                const response = await fetch('wardrobe.json');
+                const clothes = await response.json();
+                clothes.forEach(item => {
+                    const targetPanel = document.getElementById('panel-' + item.cat);
+                    if (!targetPanel) return;
+                    const el = document.createElement('div');
+                    el.className = 'clothing-item';
+                    el.innerHTML = `<img src="${item.src}" alt="clothing item">`;
+                    el.onclick = () => spawnItem(item);
+                    targetPanel.appendChild(el);
+                });
+            } catch (e) { console.error("Create your wardrobe.json file to clear this error:", e); }
+        }
+        function switchTab(category) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.grid-container').forEach(p => p.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('panel-' + category).classList.add('active');
+        }
+        function loadImage(e) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const img = document.getElementById('body-image');
+                img.src = reader.result;
+                img.style.display = 'block';
+                document.getElementById('placeholder').style.display = 'none';
+            }
+            reader.readAsDataURL(e.target.files);
+        }
+        function spawnItem(item) {
+            const canvas = document.getElementById('canvas');
+            const div = document.createElement('div');
+            div.className = 'draggable-clothing';
+            div.style.width = item.w + 'px';
+            div.style.height = item.h + 'px';
+            div.style.left = '40px'; div.style.top = '40px';
+            div.innerHTML = `<img src="${item.src}">`;
+            let dragging = false, sx, sy, il, it;
+            const startDrag = (x, y) => { dragging = true; sx = x; sy = y; il = parseInt(div.style.left)||0; it = parseInt(div.style.top)||0; };
+            const moveDrag = (x, y) => { if (!dragging) return; div.style.left = (il + (x - sx)) + 'px'; div.style.top = (it + (y - sy)) + 'px'; };
+            div.onmousedown = (e) => { startDrag(e.clientX, e.clientY); e.preventDefault(); };
+            document.onmousemove = (e) => moveDrag(e.clientX, e.clientY);
+            document.onmouseup = () => dragging = false;
+            div.ontouchstart = (e) => startDrag(e.touches.clientX, e.touches.clientY);
+            document.ontouchmove = (e) => moveDrag(e.touches.clientX, e.touches.clientY);
+            document.ontouchend = () => dragging = false;
+            div.ondblclick = () => div.remove();
+            canvas.appendChild(div);
+        }
+        function resetOutfit() { document.querySelectorAll('.draggable-clothing').forEach(el => el.remove()); }
+        loadMassiveCloset();
+    </script>
+</body>
+</html>
