@@ -19,8 +19,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-image: url("backgrounds/lotushome.png");
-            background-size: cover;
+            background-image: url("lotus-viii/lotus-home.png");
             background-position: center;
             z-index: 1;
         }
@@ -35,10 +34,23 @@
             pointer-events: none;
             z-index: 2;
         }
+        #main-flex {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
     <div id="bg-image"></div>
     <div id="overlay"></div>
+
+    <main id="main-flex">
+        <h1><img src=""/>Lotus VIII</h1>
+    </main>
 </body>
 </html>
