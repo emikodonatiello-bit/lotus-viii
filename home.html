@@ -18,7 +18,7 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      color: #ffffff;
+      color: #f0f0e2;
       font-family: "Science Gothic", sans-serif;
       font-optical-sizing: auto;
       font-weight: 350;
@@ -59,6 +59,7 @@
       max-width: 2000px;
       padding: 20px;
       width: 1000px;
+      min-width: 500px;
     }
     
     #heading {
@@ -66,8 +67,8 @@
       width: 100%;
       max-width: 1000px;
       height: auto;
-      background-color: rgba(128, 128, 128, 0.5); /* Fixed: Background transparency only, text stays sharp */
-      border: 2px solid #ffffff;
+      background-color:#7d7d7d91; 
+      border: 1px solid #f0f0e2;
       padding: 15px;
       box-sizing: border-box;
       text-align: left;
@@ -93,8 +94,8 @@
       width: 200px;
       max-height: max-content;
       padding: 20px;
-      background-color: rgba(128, 128, 128, 0.5); /* Fixed: Background transparency only */
-      border: 2px solid #ffffff;
+      background-color:#7d7d7d91; 
+      border: 1px solid #f0f0e2;
       box-sizing: border-box;
     }
 
@@ -103,7 +104,7 @@
       text-decoration: none;
       font-weight: 500;
       padding: 5px;
-      border: 2px solid #ffffff;
+      border: 1px solid #f0f0e2;
       background: transparent;
       color: white;
       cursor: pointer;
@@ -116,8 +117,25 @@
       background-color:grey;
       background-opacity:0.5;
     }
-    
-    .science-gothic-wide {
+    #subheading {
+      margin-top: 0px;
+      width: 100%;
+      max-width: 1000px;
+      min-width: 250px;
+      height: auto;
+      background-color:#f0f0e2; 
+      padding:0px;
+      display: flex;
+      color:#222b34;
+      font-size: 30pt;
+    }
+    #content {
+      flex: 1;
+      box-sizing: border-box;
+      padding: 0px;
+    }
+
+    .science-gothic-wide h1{
       font-family: "Science Gothic", sans-serif;
       font-optical-sizing: auto;
       font-weight: 750;
@@ -133,9 +151,7 @@
   <div id="overlay"></div>
   
   <main id="main-flex">
-    <h1 class="science-gothic-wide" id="heading">
-      LOTUS VIII
-    </h1>
+    <h1 class="science-gothic-wide" id="heading">LOTUS VIII</h1>
     
     <div id="sub-main-flex">
       <aside id="navigation">
@@ -144,18 +160,22 @@
         <a id="button" href="#">Academic</a>
         <a id="button" href="#">Interests</a>
         <a id="button" href="#">Sitemap</a>
-        <div class="results" style="width: 90%;background-color: #fff;color: #000;display: block;padding: 10px;border: 1px solid;margin: auto;font-family: 'times';font-size: '15pt';margin-top:10px;">
-            <p style="margin: 0;">This page is protected by a</p>
-            <h1 class="title" style="margin: 0">DOG</h1>
-            <img class="image" style="max-width: 160px;border: 1px solid;width:90%" alt="DOG" src="https://i.ibb.co/Snfhzng/dog.jpg;">
-            <p class="description">A dog's nose print is unique, much like a person's fingerprint.</p>
-            <small>
-        <a href="https://hekate.neocities.org" style="color: #2772cc;">Want your own? Visit hekate.neocities.org!</a>
-      </small>
-    </div>
+            <div class="results" style="width: 90%;background-color: #fff;color: #000;display: block;padding: 10px;border: 1px solid;margin: auto;font-family: 'times';font-size: '15pt';margin-top:10px;margin-bottom:10px;">
+                <p style="margin: 0;">This page is protected by a</p>
+                <h1 class="title" style="margin: 0">DOG</h1>
+                <img class="image" style="max-width: 160px;border: 1px solid;width:90%" alt="DOG" src="https://i.ibb.co/Snfhzng/dog.jpg;">
+                <p class="description">A dog's nose print is unique, much like a person's fingerprint.</p>
+                <small>
+                <a href="https://hekate.neocities.org" style="color: #2772cc;">Want your own? Visit hekate.neocities.org!</a>
+                </small>
+            </div>
+        <a id="button" href="#">The Archives</a>
+        <a id="button" href="#">Questions</a>
       </aside>
       <div id="content">
-        <p style="margin: 0;">Intro text goes here. You can add more paragraphs or content inside this container safely.</p>
+        <h1 class="science-gothic-wide" id="subheading" style="display: flex;justify-content: space-between;"><span style="text-align:left">EMiCO</span><span style="text-align:center">•</span><span style="text-align:right">DONATiELLO</span></h1>
+        <h1 style="padding-left: 20px;font-size: 15pt;">Introduction</h1>
+        <p style="margin: 10px;">Intro text goes here. You can add more paragraphs or content inside this container safely.</p>
       </div>
     </div>
   </main>
