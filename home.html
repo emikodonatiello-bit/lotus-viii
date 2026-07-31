@@ -1,131 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Lotus Home</title>
-    // title font
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
-    // body font
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Lotus Home</title>
+  
+  <!-- Typography Imports (Fixed URLs) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: #ffffff;
+      font-family: "Science Gothic", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 350;
+      font-style: normal;
+      font-variation-settings: "slnt" 0, "width" 140, "CTRS" 12;
+    }
+    
+    #bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("backgrounds/lotus-home.png");
+      background-position: center;
+      background-size: cover;
+      z-index: 1;
+    }
+    
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+      z-index: 2;
+    }
+    
+    #main-flex {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 2000px;
+      padding: 20px;
+      width: 1000px;
+    }
+    
+    #heading {
+      margin: 20px;
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      background-color: rgba(128, 128, 128, 0.5); /* Fixed: Background transparency only, text stays sharp */
+      border: 2px solid #ffffff;
+      padding: 15px;
+      box-sizing: border-box;
+      text-align: left;
+    }
+    
+    #sub-main-flex {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      text-align: left;
+      width: 100%; /* Fixed: Gives flexbox width to spread elements apart */
+      max-width: 1000px;
+      gap: 20px; /* Adds consistent spacing between sidebar and text */
+    }
+    
+    #navigation {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      text-align: left;
+      width: 200px;
+      max-height: max-content;
+      padding: 20px;
+      background-color: rgba(128, 128, 128, 0.5); /* Fixed: Background transparency only */
+      border: 2px solid #ffffff;
+      box-sizing: border-box;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            color: #ffffff;
-            font-family: "Science Gothic", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 350;
-            font-style: normal;
-            font-variation-settings:
-            "slnt" 0,
-            "wdth" 140,
-            "CTRS" 12;
-        }
-        #bg-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-image: url("backgrounds/lotus-home.png");
-            background-position: center;
-            background-size: cover;
-            z-index: 1;
-        }
-        #overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-image: url("https://neocities.org");
-            opacity: 0.3;
-            pointer-events: none;
-            z-index: 2;
-        }
-        #main-flex {
-            position: relative;
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            max-width: 1000px;
-            padding: 20px;
-        }
-        #heading {
-            margin-bottom: 20px;
-            max-width: 100%;
-            height: auto;
-            background-color: grey;
-            opacity: 0.5;
-            border: 5px solid #ffffff;
-        }
-        #sub-main-flex {
-            display: flex;
-            flex-direction: row;
-            align-items: ;
-            justify-content: ;
-            text-align: left;
-            max-width: 650px;
-            padding: 20px;
-        }
-        #navigation {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-            text-align: left;
-            max-width: 200px;
-            max-height: max-content;
-            padding: 20px;
-            background-color: grey;
-            opacity: 0.5;
-            border: 5px solid #ffffff;
-        }
-        .science-gothic-wide {
-            font-family: "Science Gothic", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 750;
-            font-style: normal;
-            font-variation-settings:
-            "slnt" 0,
-            "wdth" 140,
-            "CTRS" 0;
-            margin-bottom: 15px;
-        }
-        button  {
-            padding: 5px;
-            border: 5px solid #ffffff;
-        }
-    </style>
+    #navigation #button {
+      color: #ffffffa3;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 5px;
+      border: 2px solid #ffffff;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      margin-right:5px;
+      margin-bottom: 5px;
+      width:125px
+    }
+    
+    #navigation #button:hover {
+      background-color:grey;
+      background-opacity:0.5;
+    }
+    
+    .science-gothic-wide {
+      font-family: "Science Gothic", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 750;
+      font-style: normal;
+      font-variation-settings: "slnt" 0, "width" 140, "CTRS" 0; /* Fixed: 'wdth' to 'width' */
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
-    <div id="bg-image"></div>
-    <div id="overlay"></div>
 
-    <main id="main-flex">
-        <h1 class="science-gothic-wide" id="heading">
-            <img src=""/>LOTUS VIII
-        </h1>
-        <div id="sub-main-flex">
-            <aside id="navigation">
-                <a href="" alt="button">Hobbies</a>
-            </aside>
-            <p>Intro text</p>
-        </div>
-    </main>
+  <div id="bg-image"></div>
+  <div id="overlay"></div>
+  
+  <main id="main-flex">
+    <h1 class="science-gothic-wide" id="heading">
+      LOTUS VIII
+    </h1>
+    
+    <div id="sub-main-flex">
+      <aside id="navigation">
+        <a id="button" href="#">Hobbies</a>
+        <a id="button" href="#">Favorite Sites</a>
+        <a id="button" href="#">Academic</a>
+        <a id="button" href="#">Interests</a>
+        <a id="button" href="#">Sitemap</a>
+        <div class="results" style="width: 90%;background-color: #fff;color: #000;display: block;padding: 10px;border: 1px solid;margin: auto;font-family: 'times';font-size: '15pt';margin-top:10px;">
+            <p style="margin: 0;">This page is protected by a</p>
+            <h1 class="title" style="margin: 0">DOG</h1>
+            <img class="image" style="max-width: 160px;border: 1px solid;width:90%" alt="DOG" src="https://i.ibb.co/Snfhzng/dog.jpg;">
+            <p class="description">A dog's nose print is unique, much like a person's fingerprint.</p>
+            <small>
+        <a href="https://hekate.neocities.org" style="color: #2772cc;">Want your own? Visit hekate.neocities.org!</a>
+      </small>
+    </div>
+      </aside>
+      <div id="content">
+        <p style="margin: 0;">Intro text goes here. You can add more paragraphs or content inside this container safely.</p>
+      </div>
+    </div>
+  </main>
+
 </body>
 </html>
-
