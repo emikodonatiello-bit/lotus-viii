@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <title>Lotus Home</title>
+    // title font
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+    // body font
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
@@ -12,6 +21,15 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            color: #ffffff;
+            font-family: "Science Gothic", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 350;
+            font-style: normal;
+            font-variation-settings:
+            "slnt" 0,
+            "wdth" 140,
+            "CTRS" 12;
         }
         #bg-image {
             position: fixed;
@@ -30,7 +48,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-image: url("https://bettysgraphics.neocities.org/images/backgrounds/pattern%20467.gif");
+            background-image: url("https://neocities.org");
             opacity: 0.3;
             pointer-events: none;
             z-index: 2;
@@ -39,10 +57,23 @@
             position: relative;
             z-index: 3;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: left;
+            text-align: center;
+            max-width: 650px;
+            padding: 20px;
+        }
+        .science-gothic-wide {
+            font-family: "Science Gothic", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 750;
+            font-style: normal;
+            font-variation-settings:
+            "slnt" 0,
+            "wdth" 140,
+            "CTRS" 0;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -51,7 +82,11 @@
     <div id="overlay"></div>
 
     <main id="main-flex">
-        <h1><img src=""/>Lotus VIII</h1>
+        <h1 class="science-gothic-wide">
+            <img src="" alt=""/>LOTUS VIII
+        </h1>
+        <p>Intro text</p>
     </main>
 </body>
 </html>
+
