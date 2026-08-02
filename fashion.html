@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <title>VIIIFashion</title>
   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Genos:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
@@ -14,12 +18,9 @@
       align-items: center;
       overflow: auto;
       color: #f0f0e2;
-      font-family: times, serif;
-      font-weight: 250;
-      font-style: normal;
-      font-variation-settings: "slnt" 0, "width" 140, "CTRS" 12;
+      font-family: 'Barriecito', system-ui, sans-serif;
       background-image: url(backgrounds/fashiones.jpg);
-      background-size: 100%;
+      background-size: 10%;
     }
     #overlay {
             position: fixed;
@@ -32,7 +33,17 @@
             pointer-events: none;
             z-index: 100 ;
         }
-    
+    #actual-main-flex {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 900px;
+      padding: 20px;
+      width: 100%;
+      min-width: 500px;
+    }
     #main-flex {
       position: relative;
       z-index: 2;
@@ -40,26 +51,30 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      max-width: 1500px;
-      padding: 20px;
-      width: 800px;
+      max-width: 960px;
+      padding: 10px;
+      width: 80%;
       min-width: 500px;
-      background-image: url("backgrounds/studs.png");
-      background-size: 10%;
+      border-radius:5%;
+      background-image: url("backgrounds/brown lace.png");
+      background-size: 100%;
+
     }
     
     #heading {
       margin: 20px;
-      width: 100%;
-      max-width: 1000px;
+      width: 110%;
       height: auto;
       border: 1px solid #f0f0e2;
       padding: 15px;
       box-sizing: border-box;
       text-align: left;
       font-weight:lighter;
-      color: white;
-      background-color: black;
+      color: rgb(255, 128, 249);
+      border-radius: 30px 30px 0px 0px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+      display:flex;
+      flex-direction:row;
     }
     
     #sub-main-flex {
@@ -70,7 +85,7 @@
       text-align: left;
       width: 100%; /* Fixed: Gives flexbox width to spread elements apart */
       max-width: 1000px;
-      gap: 20px; /* Adds consistent spacing between sidebar and text */
+      height: fit-content;
     }
     #blinkies {
       display: inline-block;
@@ -86,36 +101,17 @@
       background-color: black;
       width:105%;
     }
-    section {
-      flex: 1;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-    box {
-      display: block;
-      width: 100%;
-      height: fit-content;
-      background-color: black;
-      border: 1px solid white;
-    }
-    #left-column {
-      max-width: 300px;
-    }
   </style>
 </head>
 <body>
 
   <div id="bg-image"></div>
   <div id="overlay"></div>
+        <div id="main-flex">
+            <h1>Fashion VIII</h1>
+            <iframe src="https://lotus-viii.github.io/lotus-viii/digital-dollmaker/dollmaker" style="width: 100%; height: 100vh; border: none; margin-top: 20px; margin-bottom: 20px; display: block;"></iframe>
+        </div>
   
-  <main id="main-flex">
-    <h1 id="heading">ファシオン</h1>
-    
-    <div id="sub-main-flex">
-      
-    </div>
-  </main>
-
 </body>
 </html>
 
