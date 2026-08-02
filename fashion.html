@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="robots" content="noindex">
   <meta charset="UTF-8" />
   <title>Fashion VIII</title>
   
@@ -33,34 +34,34 @@
             pointer-events: none;
             z-index: 100 ;
         }
-    #actual-main-flex {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 900px;
-      padding: 20px;
-      width: 100%;
-      min-width: 500px;
-    }
     #main-flex {
       position: relative;
       z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
+      text-align: left;
       max-width: 960px;
       padding: 10px;
       width: 80%;
       min-width: 500px;
-      border-radius:5%;
+      border-radius:30px;
+      border: 5px dashed white;
       background-image: url("backgrounds/brown lace.png");
       background-size: 100%;
-
+      margin-top:20px;
+      margin-bottom:20px;
     }
-    
+    box {
+      display: block;
+      background-color: #c8ea72;
+      border: 3px dashed white;
+      margin: 10px;
+      width: 85%;
+      border-radius: 20px;
+      color:#594a3d;
+      padding: 20px;
+    }
     h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
@@ -69,17 +70,6 @@
       padding:10px;
       width:75%;
       border-radius: 20px;
-    }
-    
-    #sub-main-flex {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: space-between;
-      text-align: left;
-      width: 100%; /* Fixed: Gives flexbox width to spread elements apart */
-      max-width: 1000px;
-      height: fit-content;
     }
     #blinkies {
       display: inline-block;
@@ -95,6 +85,17 @@
       background-color: black;
       width:105%;
     }
+    #flex-needed {
+      display:flex;
+      flex-direction:row;
+    }
+    iframe {
+      width: 100%;
+      border: none;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -102,7 +103,27 @@
   <div id="bg-image"></div>
   <div id="overlay"></div>
         <div id="main-flex">
-            <h1><img src="images/fashionviii-header.png" style="width: 75%; height: auto;"></h1>
+            <h1><img src="images/fashionviii-header.png" style="width: 75%; height: auto;"><a href="home.html"><img src="images/backfashion.png" style="width: 20%; height: 20%; margin-left: 10px;"></a></h1>
+            <box>
+              <section id="flex-needed">
+                <p><span style="font-size:20pt;color:rgba(226, 60, 198, 0.901)">What is Fashion to me?</span><br><br>I know this is cliche asf, but fashion really is a way to express yourself. Personally, I hate it when people assume that everyone dresses to impress other people. I believe that most people dress for themselves more than for others, especially once they're reached a certain point in their style. "Negative energy" aside, I believe that it's possible for everyone to reach a point where they feel comfortable in choosing eactly what clothes to fit their style. It's a thing that can develop organically, like an instinct. I also wanted to mention--because I'm really proud of this--that I made the brown background wit the doilies ! (and also the little dashed twirly thing)<br><br>Hello! You've made it to the next paragraph. Your attention span is not as cooked. Because I am very utilitarian in a way, I like to have a certain formula to follow when I am creating outfits, and I also like to plan my outfits ahead for the week. On top of this, I have a collection of premade outfits that I can wear again based on the weather. Now that I type this out, it sounds really weird. But...I will remind myself that this is my website, so I can say stuff I want to. (not anything like hateful but ykwim)</p>
+                <img style="width:40%;height:40%;margin-left:20px;border:white dashed 3px;border-radius: 20px;" src="images/FRUiTS1.jpg"/>
+              </section>
+              <p>Anyway... I have a lot of outfits archived that range from good to bad in my opinion. And so, I "devised" a scale which expresses how the outfits are rated. My categories are: comfort, confidence, and appearance. (pictured below)</p>
+              <img style="width: 94%;height: auto;margin-left:20px;border:white dashed 3px;border-radius: 20px;" src="images/scale!!.png"/>
+            </box>
+            <box>
+              <p style="font-size:20pt;color:rgba(226, 60, 198, 0.901)">Archived Outfits</p>
+              <p>I'm really exposing myself here... you can see that I am not fashionable every day. But it's fine ig... Anyways, you can see that this presentation is not only sort of a rough draft kinda thing, but also a different theme than this page...(this might change, you never know). Some lost media clothing pieces might appear here, but I've already or am planning to sell them.</p>
+              <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSeToZ1vfahLErRAxYREDZJ_BxZg8SyJ5dk5zGOlI-aSmlYbDpp8uYNODDnLzvmAivTtW5YimAL9siJ/embed?start=true&loop=true&delayms=3000&rm=minimal" frameborder="0" width="961" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border:white dashed 3px;border-radius: 20px"></iframe>
+              <p style="font-size:20pt;color:rgba(226, 60, 198, 0.901)">Recommended Outfits</p>
+              <p>Here is my reccommended outfits section. This is a newer addition to my collection of slideshows. Basically how it works is every so often, I take outfits that fit into the "Fire-Hard" category and drop them in here. I also sometimes spend my free time making hypothetical outfits here (I know).</p>
+              <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR9Q8sRZM1IKJvGmOnwSRvpZ3fAuLqYN_tTbivPn9dMtwBDzZEN2GEZ5v5d167E6Kb_SlSa_WzIbAAv/embed?start=true&loop=true&delayms=3000&rm=minimal" frameborder="0" width="961" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border:white dashed 3px;border-radius: 20px"></iframe>
+            </box>
+            <img src="images/dash.png" style="width: 101%; height: auto; margin: 20px;">
+            <box>
+              <p style="align-items:center;font-size: 50pt;margin-bottom: 10px; margin-top:5px;background-color: rgba(226, 60, 198, 0.901);border:white dashed 3px;padding:10px;width:70%;border-radius: 20px;color:#c8ea72"><img src="images/fashionviii-header.png" style="width: 40%; height: auto;"> | Dress-Up!</p><p>Welcome to the virtual try-on room! I created this in order to visualize my outfits better. It’s always a work-in-progress, so expect changes! It took me a while to get the sizing close to right for each piece. The reason the proportions might be a little bit wonky is because I took the photos in batches across a few months/years. So, I hope you enjoy it. (It’s best played on a computer)<br><br>Also, feel free to style me in your style! I would love to see what people come up with while bein limited to a probably realistically-sized wardrobe. I have used screenshots of this in my personal fashion rules of thumb.</p>
+            </box>
             <iframe src="https://lotus-viii.github.io/lotus-viii/digital-dollmaker/dollmaker" style="width: 100%; height: 100vh; border: none; margin-top: 20px; margin-bottom: 20px; display: block;"></iframe>
         </div>
   
