@@ -3,7 +3,7 @@
 <head>
   <meta name="robots" content="noindex">
   <meta charset="UTF-8" />
-  <title>Academic Lotus</title>
+  <title>Academia VIII</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
@@ -16,14 +16,15 @@
       justify-content: center;
       align-items: center;
       overflow: auto;
-      color: #f0f0e2;
+      color: #88ffffd9;
       font-family: "Science Gothic", sans-serif;
       font-optical-sizing: auto;
       font-weight: 350;
       font-style: normal;
       font-variation-settings: "slnt" 0, "width" 140, "CTRS" 12;
-      background-image: url(https://gifcity.carrd.co/assets/images/gallery67/75e6f98d.jpg?v=3fc8f5cd);
-      background-size: 15%;
+      background-image: url(backgrounds/academia.gif);
+      background-position: center;
+      background-size: cover;
     }
     #overlay {
             position: fixed;
@@ -32,67 +33,106 @@
             width: 100vw;
             height: 100vh;
             background-image: url("https://bettysgraphics.neocities.org/images/backgrounds/pattern%20467.gif");
-            opacity: 0.25;
+            opacity: 0.15;
             pointer-events: none;
             z-index: 100 ;
+            background-size:10%
         }
-    svg {
-      width:80%;
-      rotate: 180deg;
+    #main-flex {
       position: relative;
-      z-index: 99;
-      top:-300px;
-      left:500px;
-      fill: black;
-      stroke: rgb(64, 117, 152);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 1300px;
+      background-color: rgba(0, 0, 0, 0.749);
+      border: 1px solid #88ffffd9;
+      padding:10px;
+      height:auto;
+      margin-top:100px;
     }
-    #floating {
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    color:black;
-    margin:20px;
+    marquee {
+      position: fixed;
+      width: 100%;
+      height: 180px;
+      z-index: 2;
+      margin-top:50px;
+      padding-top:10px
     }
- 
-      @keyframes floating {
-    0% { transform: translate(0, 0px); }
-    50% { transform: translate(0, 15px); }
-    100% { transform: translate(0, -0px); }
-    }
-  </style>
-</head>
+  #shard {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #737373;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  #shard:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  #button {
+    font-size: 15pt;
+    background-color:rgba(0, 0, 0, 0.5);
+    border: 1px solid #88ffffd9;
+    padding:10px;
+    text-decoration:none;
+    color: #88ffffd9;
+  }
+  #button:hover {
+    color:transparent;
+    text-shadow: 0 0 5px #88ffffd9;
+  }
+  #flex-needed-row {
+    display: flex;
+    flex-direction: row;
+  }
+</style>
 <body>
-
-    <div id="bg-image"></div>
-    <div id="overlay"></div>
-    <div id="floating">vgknwlESrdlktjgmrole'matolgrpe'majotgl;remkabtlgmerk</div>
-    
-    <svg viewbox="0 0 500 200" class="svg-1">
-
-    <path id="curve" d="M50,150 Q250,-50 450,150" fill="tranparent"/>
-    
-    <text>
-      <TextPath href="#curve" startOffset="10%">Academic Lotus</TextPath>
-    </text>
-    <script src="script.js">
-      const textPath = document.querySelector('textPath');
-
-      let offset = 0;
-
-      function animateText() {
-        offset += 0.25;
-
-        if (offset > 100) {
-          offset = 0;
-        }
-
-        textPath.setAttribute('startOffset', offset + '%');
-        
-        requestAnimationFrame(animateText);
-      }
-
-      animateText();
-    </script>
-
-  
+  <div id="overlay"></div>
+  <section>
+    <div id="main-flex">
+      <div id="flex-needed-row">
+        <h1 style="background-color: rgba(0, 0, 0, 0.5);border: 1px solid #88ffffd9;font-size: 30pt;padding:20px;height:50px">Academia VIII<br><p style="font-size:15pt">the center of study</p></h1>
+        <nav style="background-color: rgba(0, 0, 0, 0.5);border: 1px solid #88ffffd9;font-size: 30pt;padding:10px;height:100%;margin:25px;padding-bottom:20px">
+                <a id="button" href="home.html">Home</a>
+                <a id="button" href="hobbiez.html">Hobbies</a>
+                <a id="button" href="#">Favorite Sites</a>
+                <a id="button" href="#">Interests</a>
+                <a id="button" href="#">Sitemap</a>
+                <br>
+                <a id="button" href="#">The Archives</a>
+                <a id="button" href="hobbiez.html">Questions</a>
+                <a id="button" href="#">People</a>
+                <a id="button" href="#">Quizzes</a>
+                <a id="button" href="#">Games</a>
+        </nav>
+      </div>
+      <div id="flex-needed-row">
+        <p>hi</p>
+      </div>
+  </section>
+</body>
+<body>
+  <marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();" style="top:0;">
+    <img id="shard" src="images/academia-marquee/fallen.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen2.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen3.webp"/>
+    <img id="shard" src="images/academia-marquee/fallen4.webp"/>
+    <img id="shard" src="images/academia-marquee/fallen5.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen6.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen7.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen8.gif"/>
+  </marquee>
+  <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="top:100px;">
+    <img id="shard" src="images/academia-marquee/chungking1.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking2.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking3.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking4.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking5.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking8.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking6.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking7.gif"/>
+  </marquee>
+</body>
+</html>
