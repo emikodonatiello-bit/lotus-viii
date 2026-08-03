@@ -13,6 +13,7 @@
       padding: 0;
       min-height: 100vh;
       display: flex;
+      flex-direction:column;
       justify-content: center;
       align-items: center;
       overflow: auto;
@@ -45,7 +46,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      max-width: 1300px;
+      max-width: 1175px;
       background-color: rgba(0, 0, 0, 0.749);
       border: 1px solid #88ffffd9;
       padding:10px;
@@ -93,7 +94,7 @@
   <section>
     <div id="main-flex">
       <div id="flex-needed-row">
-        <h1 style="background-color: rgba(0, 0, 0, 0.5);border: 1px solid #88ffffd9;font-size: 30pt;padding:20px;height:50px">Academia VIII<br><p style="font-size:15pt">the center of study</p></h1>
+        <h1 style="background-color: rgba(0, 0, 0, 0.5);border: 1px solid #88ffffd9;font-size: 30pt;padding:20px;height:50px;margin:25px">Academia VIII<br><p style="font-size:15pt">the center of study</p></h1>
         <nav style="background-color: rgba(0, 0, 0, 0.5);border: 1px solid #88ffffd9;font-size: 30pt;padding:10px;height:100%;margin:25px;padding-bottom:20px">
                 <a id="button" href="home.html">Home</a>
                 <a id="button" href="hobbiez.html">Hobbies</a>
@@ -108,10 +109,14 @@
                 <a id="button" href="#">Games</a>
         </nav>
       </div>
+  </section>
+  <section id="main-flex">
       <div id="flex-needed-row">
-        <p>hi</p>
+        <span style="margin:20px"><h2>Weekly Schedule</h2><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=WEEK&showTabs=0&showTitle=0&src=ZW1pa29kb25hdGllbGxvQGdtYWlsLmNvbQ&src=ZDVldXVsZWc0NmRsamVmMzA0anBhOWwwcnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MjllbWlrb2RvQHBpZWRtb250LmsxMi5jYS51cw&color=%23795548&color=%23d81b60&color=%234285f4" style="border:solid 1px #88ffffd9" width="500px" height="500" frameborder="0" scrolling="no"></iframe></span>
+        <span style="margin:20px"><h2>Monthly Schedule</h2><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=MONTH&showTabs=0&showTitle=0&src=ZW1pa29kb25hdGllbGxvQGdtYWlsLmNvbQ&src=ZDVldXVsZWc0NmRsamVmMzA0anBhOWwwcnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MjllbWlrb2RvQHBpZWRtb250LmsxMi5jYS51cw&color=%23795548&color=%23d81b60&color=%234285f4" style="border:solid 1px #88ffffd9" width="500" height="500" frameborder="0" scrolling="no"></iframe></iframe></span>
       </div>
   </section>
+  
 </body>
 <body>
   <marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();" style="top:0;">
@@ -124,7 +129,7 @@
     <img id="shard" src="images/academia-marquee/fallen7.gif"/>
     <img id="shard" src="images/academia-marquee/fallen8.gif"/>
   </marquee>
-  <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="top:100px;">
+  <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="top:450px;">
     <img id="shard" src="images/academia-marquee/chungking1.gif"/>
     <img id="shard" src="images/academia-marquee/chungking2.gif"/>
     <img id="shard" src="images/academia-marquee/chungking3.gif"/>
