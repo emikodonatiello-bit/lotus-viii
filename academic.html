@@ -4,7 +4,9 @@
   <meta name="robots" content="noindex">
   <meta charset="UTF-8" />
   <title>Academic Lotus</title>
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -15,12 +17,13 @@
       align-items: center;
       overflow: auto;
       color: #f0f0e2;
-      font-family: Arial, sans-serif;
-      font-weight: 250;
+      font-family: "Science Gothic", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 350;
       font-style: normal;
       font-variation-settings: "slnt" 0, "width" 140, "CTRS" 12;
-      background-image: url(backgrounds/hobbiez.jpg);
-      background-size: 50%;
+      background-image: url(https://gifcity.carrd.co/assets/images/gallery67/75e6f98d.jpg?v=3fc8f5cd);
+      background-size: 15%;
     }
     #overlay {
             position: fixed;
@@ -33,128 +36,63 @@
             pointer-events: none;
             z-index: 100 ;
         }
-    
-    #main-flex {
+    svg {
+      width:80%;
+      rotate: 180deg;
       position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      max-width: 1500px;
-      padding: 20px;
-      width: 800px;
-      min-width: 500px;
-      background-image: url("backgrounds/studs.png");
-      background-size: 10%;
+      z-index: 99;
+      top:-300px;
+      left:500px;
+      fill: black;
+      stroke: rgb(64, 117, 152);
     }
-    
-    #heading {
-      margin: 20px;
-      width: 100%;
-      max-width: 1000px;
-      height: auto;
-      border: 1px solid #f0f0e2;
-      padding: 15px;
-      box-sizing: border-box;
-      text-align: left;
-      font-weight:lighter;
-      color: white;
-      background-color: black;
+    #floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    color:black;
+    margin:20px;
     }
-    
-    #sub-main-flex {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: space-between;
-      text-align: left;
-      width: 100%; /* Fixed: Gives flexbox width to spread elements apart */
-      max-width: 1000px;
-      gap: 20px; /* Adds consistent spacing between sidebar and text */
-    }
-    #blinkies {
-      display: inline-block;
-      height: 20px;
-      background-color: #f0f0e2;
-    }
-    marquee {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      box-sizing: border-box;
-      scroll-direction: left;
-      background-color: black;
-      width:105%;
-      height:100%;
-    }
-    section {
-      flex: 1;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-    box {
-      display: block;
-      width: 100%;
-      height: auto;
-      background-color: black;
-      border: 1px solid white;
-      padding:0px
-    }
-    #left-column {
-      max-width: 300px;
+ 
+      @keyframes floating {
+    0% { transform: translate(0, 0px); }
+    50% { transform: translate(0, 15px); }
+    100% { transform: translate(0, -0px); }
     }
   </style>
 </head>
 <body>
 
-  <div id="bg-image"></div>
-  <div id="overlay"></div>
+    <div id="bg-image"></div>
+    <div id="overlay"></div>
+    <div id="floating">vgknwlESrdlktjgmrole'matolgrpe'majotgl;remkabtlgmerk</div>
+    
+    <svg viewbox="0 0 500 200" class="svg-1">
+
+    <path id="curve" d="M50,150 Q250,-50 450,150" fill="tranparent"/>
+    
+    <text>
+      <TextPath href="#curve" startOffset="10%">Academic Lotus</TextPath>
+    </text>
+    <script src="script.js">
+      const textPath = document.querySelector('textPath');
+
+      let offset = 0;
+
+      function animateText() {
+        offset += 0.25;
+
+        if (offset > 100) {
+          offset = 0;
+        }
+
+        textPath.setAttribute('startOffset', offset + '%');
+        
+        requestAnimationFrame(animateText);
+      }
+
+      animateText();
+    </script>
+
   
-  <main id="main-flex">
-    <h1 id="heading">h0bbi3z<a href="home.html" style="text-decoration:none;""><span style="color: #ff00fb;"> !\☆ <-back</a></span></a>
-    </h1>
-    <marquee>
-      <img src="https://gifcity.carrd.co/assets/images/gallery22/23583da3.gif?v=3fc8f5cd" id="blinkies"/>
-      <img src="https://gifcity.carrd.co/assets/images/gallery22/e1d59886.gif?v=3fc8f5cd" id="blinkies"/>
-      <img src="https://gifcity.carrd.co/assets/images/gallery22/12c9dae6.gif?v=3fc8f5cd" id="blinkies"/>
-      <img src="https://gifcity.carrd.co/assets/images/gallery22/d2fff663.gif?v=3fc8f5cd" id="blinkies"/>
-      <img src="https://gifcity.carrd.co/assets/images/gallery25/ea4921ca.gif?v=3fc8f5cd" id="blinkies"/>
-      <img src="https://gifcity.carrd.co/assets/images/gallery22/d6b82bc4.gif?v=3fc8f5cd" id="blinkies"/>
-      <img src="https://gifcity.carrd.co/assets/images/gallery179/deecc7ba.gif?v=3fc8f5cd" id="blinkies"/>
-      <img src="https://gifcity.carrd.co/assets/images/gallery18/214df47f.gif?v=3fc8f5cd" id="blinkies"/>
-    </marquee>
-    <div id="sub-main-flex">
-      <section id="left-column">
-        <box>
-          <p style="color:white">hobbiez r fun, 'n i have a lot of dem! rawrrrr.... they r so delicious</p>
-        </box>
-        <img src="images/star.gif" style="width: 50%; height: auto;margin-top:25px;margin-left:70px; margin-bottom: 25px;"/>
-        <marquee>
-          <p>para para para para ladi dadi doo da! lololololol XDDDDDD or die... (dont) im js saying shiz... i wonder how long this is............................ ->>>>>>>>>> it's infinite! low long will u wait here 4 it 2 finish? idk (wait i answered my own questione) u are an idiot ha, ha ha ha haaaaa u are an idiot ha ha ha haahahahahahahahhahahahaaaaaa u are an idiot ahahahahahhahaha</p>
-        </marquee>
-        <marquee>
-          <p style="color: #ff00fb;">i know this pretty rave girl always think about her when she says hi 2 me butterflies go right thru me when i see her dancin' wanna take a chance in getting a little closer 'n mb get 2 know her i know this pretty rave girl (rave girl rave girl rave girl...)</p>
-        </marquee>
-      </section>
-      <section id="right-column">
-        <a href="https://lotus-viii.github.io/lotus-viii/fashion">
-          <img src="images/hobbies-img/draculaura.jpg" alt="Placeholder Image" style="width: 100%; height: auto;border:solid, 2px#ff00fb"/>
-        </a>
-        <box>
-          <span style="margin-left:10px; color:#ff00fb">fazhi0n</span> is 1 of my hobbiez, 'n i like to plan my fits cuz i like to be prepared 4 the future!! (click draculaura up there^)
-        </box>
-        <br><br>
-      </section>
-    </div>
-  </main>
-
-</body>
-</html>
-
-      </section>
-    </div>
-  </main>
-
-</body>
-</html>
