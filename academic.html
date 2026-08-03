@@ -49,24 +49,15 @@
       max-width: 1175px;
       background-color: rgba(0, 0, 0, 0.749);
       border: 1px solid #88ffffd9;
-      padding:10px;
       height:auto;
       margin-top:100px;
-    }
-    marquee {
-      position: fixed;
-      width: 100%;
-      height: 180px;
-      z-index: 2;
-      margin-top:50px;
-      padding-top:10px
+      border-radius:10px;
     }
   #shard {
     width: 150px;
     height: 150px;
     border: 2px solid #737373;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
   }
   #shard:hover {
     transform: scale(1.1);
@@ -88,14 +79,22 @@
     display: flex;
     flex-direction: row;
   }
+  a {
+    text-decoration:none;
+    color: #88ffffd9;
+  }
+  a:hover {
+    color:transparent;
+    text-shadow: 0 0 5px #88ffffd9;
+  }
 </style>
 <body>
   <div id="overlay"></div>
   <section>
     <div id="main-flex">
       <div id="flex-needed-row">
-        <h1 style="background-color: rgba(0, 0, 0, 0.5);border: 1px solid #88ffffd9;font-size: 30pt;padding:20px;height:50px;margin:25px">Academia VIII<br><p style="font-size:15pt;margin-top:20px">the center of study</p></h1>
-        <nav style="background-color: rgba(0, 0, 0, 0.5);border: 1px solid #88ffffd9;font-size: 30pt;padding:10px;height:100%;margin:25px;padding-bottom:20px">
+        <h1 style="background-color: rgb(0, 0, 0);border: 1px solid #88ffffd9;font-size: 30pt;padding:20px;height:50px;margin:25px;color:white">Academia VIII<br><p style="font-size:15pt;margin-top:20px;color:transparent;text-shadow: 0 0 3px white;">the center of study</p></h1>
+        <nav style="background-color: rgb(0, 0, 0);border: 1px solid #88ffffd9;font-size: 30pt;padding:10px;height:100%;margin:25px;padding-bottom:20px;border-radius:10px">
                 <a id="button" href="home.html">Home</a>
                 <a id="button" href="hobbiez.html">Hobbies</a>
                 <a id="button" href="#">Favorite Sites</a>
@@ -111,19 +110,84 @@
       </div>
   </section>
   <section id="main-flex">
-    <h2>(Academic) Task Tracker</h2>
-    <iframe width="900" height="200" style="border:solid 1px #88ffffd9" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9GXIOtgwpWIgIWrBuxV7LpvN8-uE2rduZcpn74RtrWV-t5A2e0jSd-iuu4j7TvYfwlqskPTJvjm-l/pubhtml?gid=1665000929&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-    <h2>Study Time Blocks</h2>
-    <iframe width="900" height="200" style="border:solid 1px #88ffffd9" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9GXIOtgwpWIgIWrBuxV7LpvN8-uE2rduZcpn74RtrWV-t5A2e0jSd-iuu4j7TvYfwlqskPTJvjm-l/pubhtml?gid=263009825&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    <div id="flex-needed-row">
+      <h1 style="color:white;font-size:40pt;background-color:black;padding:20px;margin-left:50px"><span style="margin-top:20px;color:transparent;text-shadow: 0 0 3px white;">Stay </span>Organized.</h1>
+      <span style="margin-top:50px;width:500px">
+        <marquee style="width:500px" onmouseover="this.stop();" onmouseout="this.start();">
+          <a href="https://docs.google.com/spreadsheets/d/15GwshqWGg3-45fHeBhRuPDZX2eXrBx_zJeVO0uMKF54/edit?gid=0#gid=0" target="_blank"><img src="images/academia-marquee/Databases.gif"/></a>
+          <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="https://xkcd.com/simplewriter/terrible_small_logo.png" style="height:31px"/></a>
+          <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="images/academia-marquee/adfontes.gif" style="height:31px"/></a>
+          <a href="https://www.mathtrainer.xyz/" target="_blank"><img src="images/academia-marquee/mentalmath.gif"/></a>
+          <a href="https://membean.com/dashboard" target="_blank"><img src="images/academia-marquee/membean.gif" style="height:31px"/></a>
+          <a href="https://www.247sudoku.com/" target="_blank"><img src="images/academia-marquee/247sudoku.gif" style="height:31px"/></a>
+          <a href="https://playset.netlify.app/" target="_blank"><img src="images/academia-marquee/set.gif" style="height:31px"/></a>
+          <a href="https://beastacademy.com/puzzles/daily/allten" target="_blank"><img src="images/academia-marquee/beastacademy.gif" style="height:31px"/></a>
+          <a href="https://docs.google.com/spreadsheets/d/15GwshqWGg3-45fHeBhRuPDZX2eXrBx_zJeVO0uMKF54/edit?gid=0#gid=0" target="_blank"><img src="images/academia-marquee/Databases.gif"/></a>
+          <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="https://xkcd.com/simplewriter/terrible_small_logo.png" style="height:31px"/></a>
+          <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="images/academia-marquee/adfontes.gif" style="height:31px"/></a>
+          <a href="https://www.mathtrainer.xyz/" target="_blank"><img src="images/academia-marquee/mentalmath.gif"/></a>
+          <a href="https://membean.com/dashboard" target="_blank"><img src="images/academia-marquee/membean.gif" style="height:31px"/></a>
+          <a href="https://www.247sudoku.com/" target="_blank"><img src="images/academia-marquee/247sudoku.gif" style="height:31px"/></a>
+          <a href="https://playset.netlify.app/" target="_blank"><img src="images/academia-marquee/set.gif" style="height:31px"/></a>
+          <a href="https://beastacademy.com/puzzles/daily/allten" target="_blank"><img src="images/academia-marquee/beastacademy.gif" style="height:31px"/></a>
+          <a href="https://docs.google.com/spreadsheets/d/15GwshqWGg3-45fHeBhRuPDZX2eXrBx_zJeVO0uMKF54/edit?gid=0#gid=0" target="_blank"><img src="images/academia-marquee/Databases.gif"/></a>
+          <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="https://xkcd.com/simplewriter/terrible_small_logo.png" style="height:31px"/></a>
+          <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="images/academia-marquee/adfontes.gif" style="height:31px"/></a>
+          <a href="https://www.mathtrainer.xyz/" target="_blank"><img src="images/academia-marquee/mentalmath.gif"/></a>
+          <a href="https://membean.com/dashboard" target="_blank"><img src="images/academia-marquee/membean.gif" style="height:31px"/></a>
+          <a href="https://www.247sudoku.com/" target="_blank"><img src="images/academia-marquee/247sudoku.gif" style="height:31px"/></a>
+          <a href="https://playset.netlify.app/" target="_blank"><img src="images/academia-marquee/set.gif" style="height:31px"/></a>
+          <a href="https://beastacademy.com/puzzles/daily/allten" target="_blank"><img src="images/academia-marquee/beastacademy.gif" style="height:31px"/></a>
+        </marquee>
+        <marquee style="width:500px" onmouseover="this.stop();" onmouseout="this.start();" direction="right">
+          <a href="https://docs.google.com/spreadsheets/d/15GwshqWGg3-45fHeBhRuPDZX2eXrBx_zJeVO0uMKF54/edit?gid=0#gid=0" target="_blank"><img src="images/academia-marquee/Databases.gif"/></a>
+          <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="https://xkcd.com/simplewriter/terrible_small_logo.png" style="height:31px"/></a>
+          <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="images/academia-marquee/adfontes.gif" style="height:31px"/></a>
+          <a href="https://www.mathtrainer.xyz/" target="_blank"><img src="images/academia-marquee/mentalmath.gif"/></a>
+          <a href="https://membean.com/dashboard" target="_blank"><img src="images/academia-marquee/membean.gif" style="height:31px"/></a>
+          <a href="https://www.247sudoku.com/" target="_blank"><img src="images/academia-marquee/247sudoku.gif" style="height:31px"/></a>
+          <a href="https://playset.netlify.app/" target="_blank"><img src="images/academia-marquee/set.gif" style="height:31px"/></a>
+          <a href="https://beastacademy.com/puzzles/daily/allten" target="_blank"><img src="images/academia-marquee/beastacademy.gif" style="height:31px"/></a>
+          <a href="https://docs.google.com/spreadsheets/d/15GwshqWGg3-45fHeBhRuPDZX2eXrBx_zJeVO0uMKF54/edit?gid=0#gid=0" target="_blank"><img src="images/academia-marquee/Databases.gif"/></a>
+          <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="https://xkcd.com/simplewriter/terrible_small_logo.png" style="height:31px"/></a>
+          <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="images/academia-marquee/adfontes.gif" style="height:31px"/></a>
+          <a href="https://www.mathtrainer.xyz/" target="_blank"><img src="images/academia-marquee/mentalmath.gif"/></a>
+          <a href="https://membean.com/dashboard" target="_blank"><img src="images/academia-marquee/membean.gif" style="height:31px"/></a>
+          <a href="https://www.247sudoku.com/" target="_blank"><img src="images/academia-marquee/247sudoku.gif" style="height:31px"/></a>
+          <a href="https://playset.netlify.app/" target="_blank"><img src="images/academia-marquee/set.gif" style="height:31px"/></a>
+          <a href="https://beastacademy.com/puzzles/daily/allten" target="_blank"><img src="images/academia-marquee/beastacademy.gif" style="height:31px"/></a>
+          <a href="https://docs.google.com/spreadsheets/d/15GwshqWGg3-45fHeBhRuPDZX2eXrBx_zJeVO0uMKF54/edit?gid=0#gid=0" target="_blank"><img src="images/academia-marquee/Databases.gif"/></a>
+          <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="https://xkcd.com/simplewriter/terrible_small_logo.png" style="height:31px"/></a>
+          <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="images/academia-marquee/adfontes.gif" style="height:31px"/></a>
+          <a href="https://www.mathtrainer.xyz/" target="_blank"><img src="images/academia-marquee/mentalmath.gif"/></a>
+          <a href="https://membean.com/dashboard" target="_blank"><img src="images/academia-marquee/membean.gif" style="height:31px"/></a>
+          <a href="https://www.247sudoku.com/" target="_blank"><img src="images/academia-marquee/247sudoku.gif" style="height:31px"/></a>
+          <a href="https://playset.netlify.app/" target="_blank"><img src="images/academia-marquee/set.gif" style="height:31px"/></a>
+          <a href="https://beastacademy.com/puzzles/daily/allten" target="_blank"><img src="images/academia-marquee/beastacademy.gif" style="height:31px"/></a>
+        </marquee>
+      </span>
+    </div>
+    
+    <div id="flex-needed-row">
+      <span style="margin-left:50px;margin-left:50px;padding:20px;border:solid 1px #88ffffd9;border-radius:10px;background-color:black;text-align:left">
+        <a href="https://docs.google.com/spreadsheets/d/1rCJcNBX2fs3t47clH0qWZe7o762VOvdNTF1WOei9hMI/edit?pli=1&gid=1665000929#gid=1665000929" target="_blank"><h2>Task Tracker</h2></a>
+        <iframe width="600" height="200" style="border:solid 1px #88ffffd9;border-radius:10px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9GXIOtgwpWIgIWrBuxV7LpvN8-uE2rduZcpn74RtrWV-t5A2e0jSd-iuu4j7TvYfwlqskPTJvjm-l/pubhtml?gid=1665000929&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+        <a href="https://docs.google.com/spreadsheets/d/1rCJcNBX2fs3t47clH0qWZe7o762VOvdNTF1WOei9hMI/edit?pli=1&gid=263009825#gid=263009825" target="_blank"><h2>Study Time Blocks</h2></a>
+        <iframe width="600" height="200" style="border:solid 1px #88ffffd9;border-radius:10px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9GXIOtgwpWIgIWrBuxV7LpvN8-uE2rduZcpn74RtrWV-t5A2e0jSd-iuu4j7TvYfwlqskPTJvjm-l/pubhtml?gid=263009825&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+      </span>
+      <p style="margin-left:50px;margin-left:50px;margin-right:50px;padding:20px;border:solid 1px #88ffffd9;border-radius:10px;background-color:black;text-align:left">When you need to complete the assignments for the day, feel free to sit back and relax, because it’s all here for you (EMiCO specifically). No more having to type in every url or having all those bookmarks.
+</p>
+    </div>
+    
       <div id="flex-needed-row">
-        <span style="margin:20px"><h2>Weekly Schedule</h2><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=WEEK&showTabs=0&showTitle=0&src=ZW1pa29kb25hdGllbGxvQGdtYWlsLmNvbQ&src=ZDVldXVsZWc0NmRsamVmMzA0anBhOWwwcnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MjllbWlrb2RvQHBpZWRtb250LmsxMi5jYS51cw&color=%23795548&color=%23d81b60&color=%234285f4" style="border:solid 1px #88ffffd9" width="500px" height="500" frameborder="0" scrolling="no"></iframe></span>
-        <span style="margin:20px"><h2>Monthly Schedule</h2><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=MONTH&showTabs=0&showTitle=0&src=ZW1pa29kb25hdGllbGxvQGdtYWlsLmNvbQ&src=ZDVldXVsZWc0NmRsamVmMzA0anBhOWwwcnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MjllbWlrb2RvQHBpZWRtb250LmsxMi5jYS51cw&color=%23795548&color=%23d81b60&color=%234285f4" style="border:solid 1px #88ffffd9" width="500" height="500" frameborder="0" scrolling="no"></iframe></iframe></span>
+        <span style="margin:20px"><a href="https://calendar.google.com/calendar/u/0/r/week?pli=1" target="_blank"><h2>Weekly Schedule</h2></a><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=WEEK&showTabs=0&showTitle=0&src=ZW1pa29kb25hdGllbGxvQGdtYWlsLmNvbQ&src=ZDVldXVsZWc0NmRsamVmMzA0anBhOWwwcnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MjllbWlrb2RvQHBpZWRtb250LmsxMi5jYS51cw&color=%23795548&color=%23d81b60&color=%234285f4" style="border:solid 1px #88ffffd9;border-radius:10px" width="500px" height="500" frameborder="0" scrolling="no"></iframe></span>
+        <span style="margin:20px"><a href="https://calendar.google.com/calendar/u/0/r/month/2026/8/9" target="_blank"><h2>Monthly Schedule</h2></a><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=MONTH&showTabs=0&showTitle=0&src=ZW1pa29kb25hdGllbGxvQGdtYWlsLmNvbQ&src=ZDVldXVsZWc0NmRsamVmMzA0anBhOWwwcnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MjllbWlrb2RvQHBpZWRtb250LmsxMi5jYS51cw&color=%23795548&color=%23d81b60&color=%234285f4" style="border:solid 1px #88ffffd9;border-radius:10px" width="500" height="500" frameborder="0" scrolling="no"></iframe></iframe></span>
       </div>
   </section>
   
 </body>
 <body>
-  <marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();" style="top:0;">
+  <marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();" style="top:0;position: fixed;width: 100%;height: 180px;z-index: 2;margin-top:50px;padding-top:10px">
     <img id="shard" src="images/academia-marquee/fallen.gif"/>
     <img id="shard" src="images/academia-marquee/fallen2.gif"/>
     <img id="shard" src="images/academia-marquee/fallen3.webp"/>
@@ -132,13 +196,35 @@
     <img id="shard" src="images/academia-marquee/fallen6.gif"/>
     <img id="shard" src="images/academia-marquee/fallen7.gif"/>
     <img id="shard" src="images/academia-marquee/fallen8.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen2.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen3.webp"/>
+    <img id="shard" src="images/academia-marquee/fallen4.webp"/>
+    <img id="shard" src="images/academia-marquee/fallen5.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen6.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen7.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen8.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen4.webp"/>
+    <img id="shard" src="images/academia-marquee/fallen3.webp"/>
+    <img id="shard" src="images/academia-marquee/fallen5.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen6.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen7.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen8.gif"/>
+    <img id="shard" src="images/academia-marquee/fallen.gif"/>
   </marquee>
-  <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="top:450px;">
+  <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="top:450px;position: fixed;width: 100%;height: 180px;z-index: 2;margin-top:50px;padding-top:10px">
     <img id="shard" src="images/academia-marquee/chungking1.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking5.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking8.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking6.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking7.gif"/>
     <img id="shard" src="images/academia-marquee/chungking2.gif"/>
     <img id="shard" src="images/academia-marquee/chungking3.gif"/>
     <img id="shard" src="images/academia-marquee/chungking4.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking1.gif"/>
     <img id="shard" src="images/academia-marquee/chungking5.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking3.gif"/>
+    <img id="shard" src="images/academia-marquee/chungking4.gif"/>
     <img id="shard" src="images/academia-marquee/chungking8.gif"/>
     <img id="shard" src="images/academia-marquee/chungking6.gif"/>
     <img id="shard" src="images/academia-marquee/chungking7.gif"/>
