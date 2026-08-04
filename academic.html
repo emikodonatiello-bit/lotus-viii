@@ -50,8 +50,10 @@
       background-color: rgba(0, 0, 0, 0.749);
       border: 1px solid #88ffffd9;
       height:auto;
-      margin-top:100px;
+      margin-top:50px;
+      margin-bottom:50px;
       border-radius:10px;
+      width:100%;
     }
   #shard {
     width: 150px;
@@ -87,6 +89,117 @@
     color:transparent;
     text-shadow: 0 0 5px #88ffffd9;
   }
+  .distraction {
+    display: block; /* Visible by default */
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  [data-mode="study"] .distraction {
+      display: none;
+  }
+  #timerDisplay {
+    display: none;
+  }
+  [data-mode="study"] #timerDisplay {
+    display: block; /* Visible by default */
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    width:100%;
+    text-align:center;
+    color:white;
+    border:solid 1px #88ffffd9;
+    border-radius:5px;
+  }
+  button {
+    width:100%;
+    border:solid 1px #88ffffd9;
+    border-radius:5px;
+    background-color:black;
+    color:white;
+    padding:10px;
+    font-family: "Science Gothic", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 350;
+      font-style: normal;
+      font-variation-settings: "slnt" 0, "width" 140, "CTRS" 12;
+  }
+  scrollbox {
+    overflow:auto;
+    width:800px;
+    margin:20px;
+    border:solid 1px #88ffffd9;
+    border-radius:5px;
+    background-color:black;
+    color:white;
+    align-items:center;
+    height:600px;
+    padding:20px;
+  }
+  .toggle-input {
+  display: none;
+  }
+.toggle-button {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 20px;
+  padding: 12px;
+  background: #9b9b9b;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: left;
+  box-sizing: border-box;
+  max-width:fit-content%;
+}
+.toggle-content {
+  display: none;
+  margin: 0 20px 20px;
+  padding: 15px;
+  background: black;
+  border: 1px solid #88ffffd9;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align:left;
+}
+.toggle-input:checked + .toggle-button + .toggle-content {
+  display: block;
+}
+.toggle-container {
+  width:100%;
+  text-align:left;
+}
+#subject-aside {
+  position:sticky;
+  border-radius: 4px;
+  height:600px;
+  width:fit-content;
+  align-items:center;
+  margin-right:20px;
+  margin-top:20px;
+  margin-bottom:20px;
+  padding:20px;
+  align-items:center;
+} 
+</style>
+<style>
+::-webkit-scrollbar {
+width:15px; height:15px;
+} /* made by @ps1 (tysm for this code)*/
+::-webkit-scrollbar-track {
+background-image: url(https://i.imgur.com/n1kAWKU.png);
+}
+::-webkit-scrollbar-thumb {
+background-image: url(https://i.imgur.com/KePIOiE.png);
+border-top: 1px solid #D4D0C8; border-bottom: 1px solid #808080;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+background-image: url(https://i.imgur.com/ZF6PC55.png);
+width: 15px; height: 15px;
+}
+::-webkit-scrollbar-button:vertical:increment {
+background-image: url(https://i.imgur.com/sMOMkQ7.png);
+width: 15px; height: 15px;
+}
 </style>
 <body>
   <div id="overlay"></div>
@@ -113,7 +226,7 @@
     <div id="flex-needed-row">
       <h1 style="color:white;font-size:40pt;background-color:black;padding:20px;margin-left:50px"><span style="margin-top:20px;color:transparent;text-shadow: 0 0 3px white;">Stay </span>Organized.</h1>
       <span style="margin-top:50px;width:500px;height:80px;padding-top:10px;">
-        <marquee style="width:500px" onmouseover="this.stop();" onmouseout="this.start();">
+        <marquee style="width:500px" onmouseover="this.stop();" onmouseout="this.start();" class="distraction">
           <a href="https://docs.google.com/spreadsheets/d/15GwshqWGg3-45fHeBhRuPDZX2eXrBx_zJeVO0uMKF54/edit?gid=0#gid=0" target="_blank"><img src="images/academia-marquee/Databases.gif"/></a>
           <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="https://xkcd.com/simplewriter/terrible_small_logo.png" style="height:31px"/></a>
           <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="images/academia-marquee/adfontes.gif" style="height:31px"/></a>
@@ -139,7 +252,7 @@
           <a href="https://playset.netlify.app/" target="_blank"><img src="images/academia-marquee/set.gif" style="height:31px"/></a>
           <a href="https://beastacademy.com/puzzles/daily/allten" target="_blank"><img src="images/academia-marquee/beastacademy.gif" style="height:31px"/></a>
         </marquee>
-        <marquee style="width:500px;margin-bottom:0px" onmouseover="this.stop();" onmouseout="this.start();" direction="right">
+        <marquee style="width:500px;margin-bottom:0px" onmouseover="this.stop();" onmouseout="this.start();" direction="right" class="distraction">
           <a href="https://docs.google.com/spreadsheets/d/15GwshqWGg3-45fHeBhRuPDZX2eXrBx_zJeVO0uMKF54/edit?gid=0#gid=0" target="_blank"><img src="images/academia-marquee/Databases.gif"/></a>
           <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="https://xkcd.com/simplewriter/terrible_small_logo.png" style="height:31px"/></a>
           <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="images/academia-marquee/adfontes.gif" style="height:31px"/></a>
@@ -175,19 +288,220 @@
         <a href="https://docs.google.com/spreadsheets/d/1rCJcNBX2fs3t47clH0qWZe7o762VOvdNTF1WOei9hMI/edit?pli=1&gid=263009825#gid=263009825" target="_blank"><h2>Study Time Blocks</h2></a>
         <iframe width="600px" height="200" style="border:solid 1px #88ffffd9;border-radius:10px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9GXIOtgwpWIgIWrBuxV7LpvN8-uE2rduZcpn74RtrWV-t5A2e0jSd-iuu4j7TvYfwlqskPTJvjm-l/pubhtml?gid=263009825&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
       </span>
-      <p style="margin-left:50px;margin-left:50px;margin-right:50px;padding:20px;border:solid 1px #88ffffd9;border-radius:10px;background-color:black;text-align:left">When you need to complete the assignments for the day, feel free to sit back and relax, because it’s all here for you (EMiCO specifically). No more having to type in every url or having all those bookmarks.
-</p>
+      <p style="margin-left:50px;margin-left:50px;margin-right:50px;padding:20px;border:solid 1px #88ffffd9;border-radius:10px;background-color:black;text-align:left">
+        When you need to complete the assignments for the day, feel free to sit back and relax, because it’s all here for you (EMiCO specifically). No more having to type in every url or having all those bookmarks.
+        <br><br>
+        You can have this in the background while you study with the resources on this page. You may think, "this is a very distracting environment that will not enable me to pursue my highest academic excellence"<img style="height:15px" src="images/nerd emoji.png"/> but that's why there is a button that says "study" on it. So that you can study without all the marquees.
+        <br><br>
+        <button id="study-toggle" id="startBtn">Study</button>
+        <br>
+        So yeah--Love you guys! Don't forget to smile!
+        <br><br>
+        <span id="timerDisplay">00:00</span>
+      </p>
     </div>
-    <marquee style="margin-top:20px;color:white;background-color:black"> Mon, Tues, Thurs: 5:30-6:00AM: wake up - 6:00-6:15AM get ready (with meiku) - 6:20-6:35AM: violin - 6:40-6:50AM: dress (this is taped to your wall)</marquee>
+    <marquee style="margin-top:20px;color:white;background-color:black" class="distraction"> Mon, Tues, Thurs: 5:30-6:00AM: wake up - 6:00-6:15AM get ready (with meiku) - 6:20-6:35AM: violin - 6:40-6:50AM: dress (this is taped to your wall)</marquee>
       <div id="flex-needed-row">
         <span style="margin:20px"><a href="https://calendar.google.com/calendar/u/0/r/week?pli=1" target="_blank"><h2>Weekly Schedule</h2></a><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=WEEK&showTabs=0&showTitle=0&src=ZW1pa29kb25hdGllbGxvQGdtYWlsLmNvbQ&src=ZDVldXVsZWc0NmRsamVmMzA0anBhOWwwcnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MjllbWlrb2RvQHBpZWRtb250LmsxMi5jYS51cw&color=%23795548&color=%23d81b60&color=%234285f4" style="border:solid 1px #88ffffd9;border-radius:10px" width="500px" height="500" frameborder="0" scrolling="no"></iframe></span>
         <span style="margin:20px"><a href="https://calendar.google.com/calendar/u/0/r/month/2026/8/9" target="_blank"><h2>Monthly Schedule</h2></a><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=MONTH&showTabs=0&showTitle=0&src=ZW1pa29kb25hdGllbGxvQGdtYWlsLmNvbQ&src=ZDVldXVsZWc0NmRsamVmMzA0anBhOWwwcnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MjllbWlrb2RvQHBpZWRtb250LmsxMi5jYS51cw&color=%23795548&color=%23d81b60&color=%234285f4" style="border:solid 1px #88ffffd9;border-radius:10px" width="500" height="500" frameborder="0" scrolling="no"></iframe></iframe></span>
       </div>
   </section>
-  
+  <section id="main-flex">
+    <h2 style="background-color: rgb(0, 0, 0);border: 1px solid #88ffffd9;font-size: 30pt;padding:20px;height:50px;margin:25px;color:white">Resources Per Subject</h2>
+      <div id="flex-needed-row">
+        <aside id="subject-aside">
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ-648HbMk82VY0CYPsFxzQsZPvCoEgv_1Ph30S4sIuS1W11E6xe0ku4FCymBrinZGEKiFzwI42UGfG/embed?start=false&loop=true&delayms=60000&rm=minimal" frameborder="0" width="200" height="600" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+          </aside>
+          <scrollbox>
+        
+          
+        <div class="toggle-container">
+              <input type="checkbox" id="math-toggle" class="toggle-input">
+
+              <label for="math-toggle" class="toggle-button">
+                  Math
+              </label>
+              
+              <div class="toggle-content">
+                <div id="flex-needed-row">
+                  <h3><a onclick="window.open('https://piedmont.schoology.com/calendar/50981778/2026'); window.open('https://my.cpm.org/learningPortal/default', '_blank'); return false;">Math Homework</a></h3>
+                  <span style="padding:20px;">
+                    <a href="https://piedmont.schoology.com/calendar/50981778/2026">Calendar</a><br>
+                    <a href="https://my.cpm.org/learningPortal/default">CPM</a>
+                  </span>
+                </div>
+                <div id="flex-needed-row">
+                  <h3><a onclick="window.open('https://piedmont.schoology.com/'); window.open('https://notebook.google.com/notebook/6dd1d619-a132-46b5-a192-921db572967c'); window.open('https://www.mathtrainer.xyz/', '_blank'); return false;">Math Studying</a></h3>
+                  <span style="padding:20px;">
+                    <a href="https://piedmont.schoology.com/">Schoology Page</a><br>
+                    <a href="https://notebook.google.com/notebook/6dd1d619-a132-46b5-a192-921db572967c">Notebook</a><br>
+                    <a href="https://www.mathtrainer.xyz/">Mental Math Trainer</a>
+                  </span>
+                </div>
+              </div>
+          </div>
+
+          <div class="toggle-container">
+              <input type="checkbox" id="chemistry-toggle" class="toggle-input">
+
+              <label for="chemistry-toggle" class="toggle-button">
+                  Chemistry
+              </label>
+              
+              <div class="toggle-content">
+                <div id="flex-needed-row">
+                  <h3><a onclick="window.open('https://piedmont.schoology.com/calendar/50981778/2026'); window.open('https://piedmont.schoology.com', '_blank'); return false;">Chemistry Homework</a></h3>
+                  <span style="padding:20px;">
+                    <a href="https://piedmont.schoology.com/calendar/50981778/2026">Calendar</a><br>
+                    <a href="https://piedmont.schoology.com">Schoology Page</a>
+                  </span>
+                </div>
+                <div id="flex-needed-row">
+                  <h3><a onclick="window.open('https://piedmont.schoology.com/'); window.open('https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?pli=1&tab=t.n48fe7fpgvah'); window.open('https://notebook.google.com/notebook/d88f44dc-a24d-4d15-ab77-92a4ba63f04a?addSource=true', '_blank'); return false;">Chemistry Studying</a></h3>
+                  <span style="padding:20px;">
+                    <a href="https://piedmont.schoology.com/">Schoology</a><br>
+                    <a href="https://notebook.google.com/notebook/d88f44dc-a24d-4d15-ab77-92a4ba63f04a?addSource=true">Notebook</a><br>
+                    <a href="https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?pli=1&tab=t.n48fe7fpgvah">Mental Math Trainer</a>
+                  </span>
+                </div>
+              </div>
+          </div>
+        
+          <div class="toggle-container">
+              <input type="checkbox" id="hmwh-toggle" class="toggle-input">
+
+              <label for="hmwh-toggle" class="toggle-button">
+                  Honors Modern World History
+              </label>
+              
+              <div class="toggle-content">
+                <div id="flex-needed-row">
+                  <h3><a onclick="window.open('https://piedmont.schoology.com/calendar/50981778/2026'); window.open('https://piedmont.schoology.com', '_blank'); return false;">HMWH HW</a></h3>
+                  <span style="padding:20px;">
+                    <a href="https://piedmont.schoology.com/calendar/50981778/2026">Calendar</a><br>
+                    <a href="https://piedmont.schoology.com">Schoology Page</a>
+                  </span>
+                </div>
+                <div id="flex-needed-row">
+                  <h3><a onclick="window.open('https://piedmont.schoology.com/'); window.open('https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?pli=1&tab=t.n48fe7fpgvah'); window.open('https://notebook.google.com/notebook/d88f44dc-a24d-4d15-ab77-92a4ba63f04a?addSource=true', '_blank'); return false;">HMWH Studying</a></h3>
+                  <span style="padding:20px;">
+                    <a href="https://piedmont.schoology.com/">Schoology</a><br>
+                    <a href="https://notebook.google.com/notebook/d88f44dc-a24d-4d15-ab77-92a4ba63f04a?addSource=true">Notebook</a><br>
+                    <a href="https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?pli=1&tab=t.n48fe7fpgvah">Mental Math Trainer</a>
+                  </span>
+                </div>
+              </div>
+          </div>
+        
+          <div class="toggle-container">
+              <input type="checkbox" id="APCSP-toggle" class="toggle-input">
+
+              <label for="APCSP-toggle" class="toggle-button">
+                  AP Computer Science Principles
+              </label>
+              
+              <div class="toggle-content">
+                <div id="flex-needed-row">
+                  <h3><a onclick="window.open('https://piedmont.schoology.com/calendar/50981778/2026'); window.open('https://piedmont.schoology.com', '_blank'); return false;">APCSP HW</a></h3>
+                  <span style="padding:20px;">
+                    <a href="https://piedmont.schoology.com/calendar/50981778/2026">Calendar</a><br>
+                    <a href="https://piedmont.schoology.com">Schoology Page</a>
+                  </span>
+                </div>
+                <div id="flex-needed-row">
+                  <h3><a onclick="window.open('https://piedmont.schoology.com/'); window.open('https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?pli=1&tab=t.n48fe7fpgvah'); window.open('https://notebook.google.com/notebook/d88f44dc-a24d-4d15-ab77-92a4ba63f04a?addSource=true', '_blank'); return false;">APCSP Studying</a></h3>
+                  <span style="padding:20px;">
+                    <a href="https://piedmont.schoology.com/">Schoology</a><br>
+                    <a href="https://notebook.google.com/notebook/d88f44dc-a24d-4d15-ab77-92a4ba63f04a?addSource=true">Notebook</a><br>
+                    <a href="https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?pli=1&tab=t.n48fe7fpgvah">Mental Math Trainer</a>
+                  </span>
+                </div>
+              </div>
+          </div>
+        
+          <div class="toggle-container">
+              <input type="checkbox" id="English-toggle" class="toggle-input">
+
+              <label for="English-toggle" class="toggle-button">
+                  English
+              </label>
+              
+              <div class="toggle-content">
+                <div id="flex-needed-row">
+                  <h3><a onclick="window.open('https://piedmont.schoology.com/calendar/50981778/2026'); window.open('https://piedmont.schoology.com', '_blank'); return false;">English HW</a></h3>
+                  <span style="padding:20px;">
+                    <a href="https://piedmont.schoology.com/calendar/50981778/2026">Calendar</a><br>
+                    <a href="https://piedmont.schoology.com">Schoology Page</a>
+                  </span>
+                </div>
+                <div id="flex-needed-row">
+                  <h3><a onclick="window.open('https://piedmont.schoology.com/'); window.open('https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?pli=1&tab=t.n48fe7fpgvah'); window.open('https://notebook.google.com/notebook/d88f44dc-a24d-4d15-ab77-92a4ba63f04a?addSource=true', '_blank'); return false;">English Studying</a></h3>
+                  <span style="padding:20px;">
+                    <a href="https://piedmont.schoology.com/">Schoology</a><br>
+                    <a href="https://notebook.google.com/notebook/d88f44dc-a24d-4d15-ab77-92a4ba63f04a?addSource=true">Notebook</a><br>
+                    <a href="https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?pli=1&tab=t.n48fe7fpgvah">Mental Math Trainer</a>
+                  </span>
+                </div>
+              </div>
+          </div>
+
+          <div class="toggle-container">
+              <input type="checkbox" id="Japanese-toggle" class="toggle-input">
+
+              <label for="Japanese-toggle" class="toggle-button">
+                  Japanese
+              </label>
+              
+              <div class="toggle-content">
+                <div id="flex-needed-row">
+                  <h3><a onclick="window.open('https://piedmont.schoology.com/calendar/50981778/2026'); window.open('https://piedmont.schoology.com', '_blank'); return false;">Japanese HW</a></h3>
+                  <span style="padding:20px;">
+                    <a href="https://piedmont.schoology.com/calendar/50981778/2026">Calendar</a><br>
+                    <a href="https://piedmont.schoology.com">Schoology Page</a>
+                  </span>
+                </div>
+                <div id="flex-needed-row">
+                  <h3><a onclick="window.open('https://piedmont.schoology.com/'); window.open('https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?pli=1&tab=t.n48fe7fpgvah'); window.open('https://notebook.google.com/notebook/d88f44dc-a24d-4d15-ab77-92a4ba63f04a?addSource=true', '_blank'); return false;">Japanese Studying</a></h3>
+                  <span style="padding:20px;">
+                    <a href="https://piedmont.schoology.com/">Schoology</a><br>
+                    <a href="https://notebook.google.com/notebook/d88f44dc-a24d-4d15-ab77-92a4ba63f04a?addSource=true">Notebook</a><br>
+                    <a href="https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?pli=1&tab=t.n48fe7fpgvah">Mental Math Trainer</a>
+                  </span>
+                </div>
+              </div>
+          </div>
+
+          <div class="toggle-container">
+              <input type="checkbox" id="Otherlinks-toggle" class="toggle-input">
+
+              <label for="Otherlinks-toggle" class="toggle-button">
+                  Other Links
+              </label>
+              
+              <div class="toggle-content">
+                <span>
+                  <a href="https://docs.google.com/spreadsheets/d/15GwshqWGg3-45fHeBhRuPDZX2eXrBx_zJeVO0uMKF54/edit?gid=0#gid=0" target="_blank"><img src="images/academia-marquee/Databases.gif"/></a>
+                  <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="https://xkcd.com/simplewriter/terrible_small_logo.png" style="height:31px"/></a>
+                  <a href="https://xkcd.com/simplewriter/" target="_blank"><img src="images/academia-marquee/adfontes.gif" style="height:31px"/></a>
+                  <a href="https://www.mathtrainer.xyz/" target="_blank"><img src="images/academia-marquee/mentalmath.gif"/></a>
+                  <a href="https://membean.com/dashboard" target="_blank"><img src="images/academia-marquee/membean.gif" style="height:31px"/></a>
+                  <a href="https://www.247sudoku.com/" target="_blank"><img src="images/academia-marquee/247sudoku.gif" style="height:31px"/></a>
+                  <a href="https://playset.netlify.app/" target="_blank"><img src="images/academia-marquee/set.gif" style="height:31px"/></a>
+                  <a href="https://beastacademy.com/puzzles/daily/allten" target="_blank"><img src="images/academia-marquee/beastacademy.gif" style="height:31px"/></a>
+                </span>
+                <br>
+                <a href="https://docs.google.com/document/d/1wuXtuDzgy6XcsFK8eSuGOI9sKXdaAgOEVp7DlUM9YKA/edit?tab=t.cdpgd5j424o7">Scratch Document</a><br>
+                <a href="https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?tab=t.xbap1uh5a4ki#heading=h.c7riag4iwoij">Study Organizers</a>
+              </div>
+          </div>
+
+      </scrollbox>
+      </div>
+    
+  </section>
 </body>
 <body>
-  <marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();" style="top:0;position: fixed;width: 100%;height: 180px;z-index: 2;margin-top:50px;padding-top:10px">
+  <marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();" style="top:0;position: fixed;width: 100%;height: 180px;z-index: 2;margin-top:50px;padding-top:10px" class="distraction">
     <img id="shard" src="images/academia-marquee/fallen.gif"/>
     <img id="shard" src="images/academia-marquee/fallen2.gif"/>
     <img id="shard" src="images/academia-marquee/fallen3.webp"/>
@@ -212,7 +526,7 @@
     <img id="shard" src="images/academia-marquee/fallen8.gif"/>
     <img id="shard" src="images/academia-marquee/fallen.gif"/>
   </marquee>
-  <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="top:450px;position: fixed;width: 100%;height: 180px;z-index: 2;margin-top:50px;padding-top:10px">
+  <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="top:450px;position: fixed;width: 100%;height: 180px;z-index: 2;margin-top:50px;padding-top:10px" class="distraction">
     <img id="shard" src="images/academia-marquee/chungking1.gif"/>
     <img id="shard" src="images/academia-marquee/chungking5.gif"/>
     <img id="shard" src="images/academia-marquee/chungking8.gif"/>
@@ -230,4 +544,60 @@
     <img id="shard" src="images/academia-marquee/chungking7.gif"/>
   </marquee>
 </body>
+<script>
+  const studyButton = document.getElementById('study-toggle');
+  const htmlElement = document.documentElement;
+  const display = document.getElementById("timerDisplay");
+
+  let timer = null;
+  let totalSeconds = 0;
+
+  function startTimer() {
+      if (timer !== null) return; 
+
+      timer = setInterval(() => {
+          totalSeconds++;
+
+          let minutes = Math.floor(totalSeconds / 60);
+          let seconds = totalSeconds % 60;
+
+          let formattedMinutes = String(minutes).padStart(2, '0');
+          let formattedSeconds = String(seconds).padStart(2, '0');
+
+          display.textContent = `${formattedMinutes}:${formattedSeconds}`;
+      }, 1000);
+  }
+
+  function resetTimer() {
+      clearInterval(timer);
+      timer = null;
+      totalSeconds = 0;
+      display.textContent = "00:00";
+  }
+
+  const savedMode = localStorage.getItem('site-mode');
+  if (savedMode === 'study') {
+      htmlElement.setAttribute('data-mode', 'study');
+      studyButton.textContent = 'End Session';
+      startTimer();
+  }
+
+  studyButton.addEventListener('click', () => {
+      const currentMode = htmlElement.getAttribute('data-mode');
+      
+      if (currentMode === 'study') {
+
+          htmlElement.removeAttribute('data-mode');
+          localStorage.setItem('site-mode', 'normal');
+          studyButton.textContent = 'Study';
+          resetTimer(); 
+      } else {
+
+          htmlElement.setAttribute('data-mode', 'study');
+          localStorage.setItem('site-mode', 'study');
+          studyButton.textContent = 'End Session';
+          startTimer();
+      }
+  });
+</script>
 </html>
