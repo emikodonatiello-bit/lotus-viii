@@ -100,6 +100,6 @@
 { "id": "outerwear_24", "cat": "outerwear", "src": "clothes/outerwear/outerwear_24.png", "w": 220, "h": 220 },
 { "id": "outerwear_21", "cat": "outerwear", "src": "clothes/outerwear/outerwear_21.png", "w": 245, "h": 245 },
 { "id": "outerwear_22", "cat": "outerwear", "src": "clothes/outerwear/outerwear_22.png", "w": 245, "h": 245 },
-{ "id": "outerwear_23", "cat": "outerwear", "src": "clothes/outerwear/outerwear_23.png", "w": 245, "h": 245 }
-
+{ "id": "outerwear_22", "cat": "outerwear", "src": "clothes/outerwear/outerwear_23.png", "w": 245, "h": 245 },
+{ "id": "outerwear_23", "cat": "outerwear", "src": "clothes/outerwear/outerwear_25.png", "w": 190, "h": 190 }
 ]
