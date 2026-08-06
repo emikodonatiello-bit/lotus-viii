@@ -96,6 +96,13 @@
         height:298px;
         border:solid 3px #b59ba2;
       }
+      iframe {
+        position:relative;
+        width:425px;
+        z-index:1;
+        height:298px;
+        border:solid 3px #b59ba2;
+      }
       #envelope-boundaries {
         align-items:center;
         width:100%;
@@ -132,7 +139,7 @@ width: 15px; height: 15px;
       <div style="display:flex;flex-direction:column;">
         <h1 style="height:150px;width:100%;background: linear-gradient(180deg,rgba(140, 110, 98, 1) 0%, rgba(219, 176, 147, 1) 78%, rgba(209, 195, 180, 1) 100%);position:fixed;top:-25px;padding-top:100px;padding-left:50px;left:0px;z-index:1;font-size:50pt;top:-45px">
           Favorite Sites 
-          <img src="https://cdn2.cdnstep.com/G2hKB3kwRkky0Xckz7K9/14-1.thumb128.png" style="width:20%;position:fixed;top:-25px"/>
+          <img src="https://cdn2.cdnstep.com/G2hKB3kwRkky0Xckz7K9/14-1.thumb128.png" style="width:20%;position:fixed;top:-25px;z-index:4"/>
         </h1>
         <span>
             <img style="position:fixed;width:100%;left:0px;z-index:1;top:200px" src="images/lace.png"/>
@@ -143,9 +150,14 @@ width: 15px; height: 15px;
     <div id="scrollbox">
       <p>これを読めれるならかっこいいじゃん。これは「ギャル」らしいページにあるんだ。でも私はギャルじゃないから、本当の「ギャル」ページじゃないんだ。メイクとかできないから。ごめんなさい。</p>
       <p>
-        There are many sites that I've been to in my life, and I'm here to share my favorites! I deliberately chose to mix categories of sites so you can discover them as randomly as I did! (also cuz im lazy asf)
+        There are many sites that I've been to in my life, and I'm here to share my favorites! Here are the categories you can click to:
       </p>
-      <img src="https://gifcity.carrd.co/assets/images/gallery46/b2ff3c46.png?v=3fc8f5cd" width=50% style="margin-left:115px">
+        <a href="#WebdResources">Webdesign Resources</a><br>
+        <a href="#UsermadeSites">User-made sites</a><br>
+        <a href="#CommercialSites">Commercial sites</a><br>
+        <a href="#Miscellaneous">Miscellaneous</a><br>
+      <img src="https://gifcity.carrd.co/assets/images/gallery46/b2ff3c46.png?v=3fc8f5cd" width=50% style="margin-left:115px" id="WebdResources">
+
 
       <div id="site">
         <section id="envelope-boundaries">
@@ -159,27 +171,64 @@ width: 15px; height: 15px;
             
         <img src="https://gifcity.carrd.co/assets/images/gallery46/b2ff3c46.png?v=3fc8f5cd" width=50% style="margin-left:115px">
           <p>
-            <h2>Glitter Graphics</h2>
+            <a href="https://www.glitter-graphics.com"><h2>Glitter Graphics</h2></a>
             This is a great site for finding exactly what you want for your own site! It has literally everything sfw i think... it does have ai art, though which I will just say I don't support.
           </p>
       </div>
 
+      <img src="https://gifcity.carrd.co/assets/images/gallery46/b2ff3c46.png?v=3fc8f5cd" width=50% style="margin-left:115px" id="UsermadeSites">
+
+      <div id="site" >
+        <section id="envelope-boundaries">
+          <img src="images/envelope.png" id="envelope"/>
+          <div id="iframe">
+              <iframe src="https://john.citrons.xyz/" width="400" height="300" alt="Glitter Graphic" style="border:0;"></iframe>
+          </div>
+        </section>
+            
+        <img src="https://gifcity.carrd.co/assets/images/gallery46/b2ff3c46.png?v=3fc8f5cd" width=50% style="margin-left:115px">
+          <p>
+            <a href="https://john.citrons.xyz/"><h2>Johnvertisement</h2></a>
+            I know I'm basically a fetus when it comes to the webdesigning community, but I think this site is such a "checkpoint" so to speak. It's really a cool place to explore new corners of the web
+          </p>
+      </div>
+
+      <img src="https://gifcity.carrd.co/assets/images/gallery46/b2ff3c46.png?v=3fc8f5cd" width=50% style="margin-left:115px" id="CommercialSites">
+
       <div id="site">
         <section id="envelope-boundaries">
           <img src="images/envelope.png" id="envelope"/>
           <div id="iframe">
-            <a href="https://www.glitter-graphics.com" target="_blank">
-              <img src="https://dl.glitter-graphics.com/pub/1336/1336166twhjnwdsd9.gif" width="400" height="300" alt="Glitter Graphic" style="border:0;">
+              <iframe src="https://www.pinterest.com/homefeed/" width="400" height="300" alt="Glitter Graphic" style="border:0;"></iframe>
+          </div>
+        </section>
+            
+        <img src="https://gifcity.carrd.co/assets/images/gallery46/b2ff3c46.png?v=3fc8f5cd" width=50% style="margin-left:115px">
+          <p>
+            <a href="https://www.pinterest.com/homefeed/"><h2>Pinterest</h2></a>
+            Yeah, I get it. I'm too basic. But I LOVE this site, bc its one of the last remaining social media platforms that are primarily image-based (i think).
+          </p>
+      </div>
+
+      <img src="https://gifcity.carrd.co/assets/images/gallery46/b2ff3c46.png?v=3fc8f5cd" width=50% style="margin-left:115px" id="Miscellaneous">
+
+      <div id="site">
+        <section id="envelope-boundaries">
+          <img src="images/envelope.png" id="envelope"/>
+          <div id="iframe">
+            <a href="https://flagfootballplaydesigner.com/">
+              <img src="https://files.catbox.moe/k85w4g.png" width="400" height="300" alt="Glitter Graphic" style="border:0;">
             </a>
           </div>
         </section>
             
         <img src="https://gifcity.carrd.co/assets/images/gallery46/b2ff3c46.png?v=3fc8f5cd" width=50% style="margin-left:115px">
           <p>
-            <h2>Glitter Graphics</h2>
-            This is a great site for finding exactly what you want for your own site! It has literally everything sfw i think...
+            <a href="https://flagfootballplaydesigner.com/"><h2>Flag Football Play Designer</h2></a>
+            I know this is kinda random, but it's really helpful for coming up with plays (I'm not even on offense)
           </p>
       </div>
+      
   </section>
     
         
