@@ -201,6 +201,11 @@ width: 15px; height: 15px;
 background-image: url(https://i.imgur.com/sMOMkQ7.png);
 width: 15px; height: 15px;
 }
+location /proxy-pomofocus/ {
+    proxy_pass https://pomofocus.io;
+    proxy_hide_header X-Frame-Options;
+    proxy_hide_header Content-Security-Policy;
+}
 </style>
 <body>
   <div id="overlay"></div>
@@ -297,8 +302,6 @@ width: 15px; height: 15px;
         <button id="study-toggle" id="startBtn">Study</button>
         <br>
         So yeah--Love you guys! Don't forget to smile!
-        <br><br>
-        <span id="timerDisplay">00:00</span>
       </p>
     </div>
     <marquee style="margin-top:20px;color:white;background-color:black" class="distraction"> Mon, Tues, Thurs: 5:30-6:00AM: wake up - 6:00-6:15AM get ready (with meiku) - 6:20-6:35AM: violin - 6:40-6:50AM: dress (this is taped to your wall)</marquee>
@@ -494,7 +497,8 @@ width: 15px; height: 15px;
                 </span>
                 <br>
                 <a href="https://docs.google.com/document/d/1wuXtuDzgy6XcsFK8eSuGOI9sKXdaAgOEVp7DlUM9YKA/edit?tab=t.cdpgd5j424o7">Scratch Document</a><br>
-                <a href="https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?tab=t.xbap1uh5a4ki#heading=h.c7riag4iwoij">Study Organizers</a>
+                <a href="https://docs.google.com/document/d/1t27pwWzkUogh17-ZWBTE6JTtgpg4r2btiJNK3iSgQag/edit?tab=t.xbap1uh5a4ki#heading=h.c7riag4iwoij">Study Organizers</a><br>
+                <a href="https://pomofocus.io/app">Pomodoro Timer</a>
               </div>
           </div>
 
@@ -502,9 +506,10 @@ width: 15px; height: 15px;
       </div>
   </section>
 
-  <section id="main-flex">
-    
-  </section>
+  <div style="background-image:url(https://i.pinimg.com/1200x/96/b1/ad/96b1adce4b14dbac54c4c9b3d44cb441.jpg);background-size:cover;width:100%;height:1000px;z-index:99">
+    <h2 style="color:rgb(68, 126, 107);margin:100px">study space</h2>
+    <span id="timerDisplay"  style="color:rgb(68, 126, 107); border:none">00:00</span>
+</div>
 </body>
 <body>
   <marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();" style="top:0;position: fixed;width: 100%;height: 180px;z-index: 2;margin-top:50px;padding-top:10px" class="distraction">
